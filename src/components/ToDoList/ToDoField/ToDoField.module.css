@@ -1,0 +1,16 @@
+.error{
+    color: red;
+    margin: 1px;
+}
+
+.errorForInput {
+    border: red 2px solid;
+}
+
+.addToDoButton{
+    height: 15px;
+    width: 15px;
+    border: none;
+    background: url("../../../assets/add.svg") no-repeat 50% 50%;
+    -webkit-appearance: none;
+}

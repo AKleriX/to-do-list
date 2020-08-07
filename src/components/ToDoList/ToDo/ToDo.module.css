@@ -1,0 +1,61 @@
+.completedBackground{
+    background-color: aquamarine;
+}
+
+.notCompletedBackground {
+    background-color: aliceblue;
+}
+
+.completedText {
+    text-decoration: line-through;
+}
+
+.notCompletedText {
+    text-decoration: none;
+}
+
+.toDo{
+    border: rgba(0, 0, 0, .5) 1px solid;
+    border-radius: 5px;
+    margin: 2.5px 2px;
+    padding: 1px;
+    min-height: 5vh;
+}
+
+.toDo:hover{
+    border: black 1px solid;
+    box-shadow: black 0 0 2.5px;
+}
+
+.edit{
+    margin-right: 20px;
+    display: flex;
+    float: right;
+    width: 24px;
+}
+
+.editButton, .detButton {
+    opacity: .5;
+    width: 20px;
+    top: 0;
+}
+
+.editButton:hover, .detButton:hover {
+    opacity: 1;
+}
+
+.title {
+    padding: 2px 5px;
+}
+
+.titleCompleted, .titleInProgress {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.deleteQuestion {
+    top: 0;
+    display: flex;
+    float: right;
+}
+

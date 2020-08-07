@@ -1,0 +1,51 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+}
+
+.modalBody {
+    padding: 2rem;
+    width: 400px;
+    max-height: 40px;
+    border-radius: 5px;
+    background: aliceblue;
+}
+
+.error {
+    color: red;
+    margin-left: 60px;
+}
+
+.formBlock {
+    margin: 10px;
+}
+
+.input {
+    margin-left: 60px;
+
+}
+
+.inputError {
+    border: 2px red solid;
+}
+
+.closeImg{
+    opacity: .7;
+    display: block;
+    position: absolute;
+    width: 48px;
+    margin: 1px;
+    right: 0;
+    top: 0;
+}
+
+.closeImg:hover{
+    opacity: 1;
+}
