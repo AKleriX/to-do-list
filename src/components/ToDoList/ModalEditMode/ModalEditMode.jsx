@@ -40,16 +40,15 @@ const ModalEditMode = ({toDoEditMode, completeEditToDo, closeEditMode}) => {
             <div className={cn(style.modal)} id={'background'} onDoubleClick={closeEditMode}>
                 <div className={cn(style.modalBody)}>
                     <form onSubmit={formikForm.handleSubmit} className={style.formBlock}>
-                        <input
+                        <textarea
                             className={classForInput}
                             onChange={formikForm.handleChange}
                             id={'toDoText'}
                             name={'toDoText'}
-                            type={'text'}
                             value={formikForm.values.toDoText}
                             placeholder={'Your to do'}
                             autoFocus/>
-                        <button type={'submit'}>Edit to do</button>
+                        <button className={style.editButton} type={'submit'}>Edit to do</button>
                         {/*Если было произведено двойное нажатие на "крестике" - то произайдет закрытие редактирования без сохранения изменений*/}
                         {/*If you double-clicked on the "cross", then the editing will be closed without saving the changes*/}
                         <input className={cn(style.closeImg)} type={'image'} alt={'Close'} src={closeImg} onClick={closeEditMode} id={'background'}/>

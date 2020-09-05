@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 // Field component with a form for adding a new to-do
 
 const ToDoField = ({addToDo}) => {
+
     // задание нового formik хука для контроля формы, с валидацией Yup-объектом
     // setting a new formik hook for form control, with Yup object validation
     const formikForm = useFormik({
@@ -20,6 +21,8 @@ const ToDoField = ({addToDo}) => {
             toDoText: Yup.string()
                 .required('Your to-do must have text!')
         }),
+        validateOnChange: false,
+        validateOnBlur: false,
         onSubmit: values => {
             addToDo(values.toDoText);
             formikForm.resetForm();
@@ -28,17 +31,16 @@ const ToDoField = ({addToDo}) => {
 
     // Задаем классы для поля ввода в зависимости от наличия ошибки
     // Setting classes for the input field depending on the presence of an error
-    let inputTextClass = formikForm.errors.toDoText ? style.errorForInput : '';
+    let inputTextClass = formikForm.errors.toDoText ? cn(style.errorForInput, style.toDoTextField) : style.toDoTextField;
 
     // Отрисовываем форму, связывая ее с хуком formik для контроля формы
     // Rendering the form by linking it to the formik hook for form control
     return (
         <form onSubmit={formikForm.handleSubmit}>
             <div>
-                <input onChange={formikForm.handleChange}
+                <textarea onChange={formikForm.handleChange}
                        id={'toDoText'}
                        name={'toDoText'}
-                       type={'text'}
                        value={formikForm.values.toDoText}
                        placeholder={'Your new to do'}
                        className={inputTextClass}/>{' '}

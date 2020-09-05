@@ -42,7 +42,8 @@ const ToDo = ({title, id, completed, removeToDo, onChange, index, openEditWindow
                      title={title}
                      onPointerLeave={() => {
                      }}>
-                    <input type={'checkbox'} checked={completed} onChange={() => onChange(id)}/>
+                    <input id={`toDoCheck${id}`} className={style.customCheckbox} type={'checkbox'} checked={completed} onChange={() => onChange(id)}/>
+                    <label for={`toDoCheck${id}`}/>
                     <span className={completedClasses.title}
                           id={id}>{!completed ? 'In progress...' : 'Completed!'}</span>
                     {/*Если необходимо - показываем окно с подтверждением удаления*/}
